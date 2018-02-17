@@ -1,0 +1,51 @@
+﻿<Window x:Class="facebook_comment_utils.ShellView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        mc:Ignorable="d"
+        Title="Facebook losowanie" Height="250" Width="450" MinWidth="450">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Label Content="Osoby (unikatowe):"/>
+            <Button Grid.Row="0" x:Name="GetFromClipboard" Content="Ze schowka" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,3,5,0"/>
+            <TextBox x:Name="PersonsDistinctTxt" Margin="5" Grid.Row="1"/>
+        </Grid>
+
+        <Grid Grid.Row="0" Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <TextBox x:Name="PersonsDrawnTxt" Grid.Row="1" TextWrapping="Wrap" Text="TextBox" Margin="5"/>
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Label Content="Osoby (wylosowane)" />
+                <TextBox x:Name="PersonsDrawCount" HorizontalAlignment="Right" VerticalAlignment="Center" Grid.Column="1" Height="20" Width="30"/>
+                <!--<xctk:IntegerUpDown x:Name="PersonsDrawCount" HorizontalAlignment="Right" VerticalAlignment="Center" Grid.Column="1" Height="20"/>-->
+                <Button x:Name="DrawSomePersons" Content="Wylosuj" Grid.Column="2" VerticalAlignment="Center"/>
+            </Grid>
+        </Grid>
+        <StatusBar Grid.Row="1" Grid.ColumnSpan="2" Grid.Column="0">
+            <Label Content="marek.malbrandt@gmail.com" />
+            <Label HorizontalAlignment="Right" Content="[Made for Preppers Poland]"/>
+        </StatusBar>
+    </Grid>
+</Window>
